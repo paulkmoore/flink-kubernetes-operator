@@ -66,6 +66,9 @@ spec:
           volumeMounts:
             - mountPath: /opt/flink/log
               name: flink-logs
+          envFrom:
+            - configMapRef:
+                name: local-config
         # Sample sidecar container
         - name: fluentbit
           image: fluent/fluent-bit:1.8.12-debug
